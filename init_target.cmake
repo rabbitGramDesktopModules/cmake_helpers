@@ -23,9 +23,11 @@ function(init_target target_name) # init_target(my_target [cxx_std_..] folder_na
     endforeach()
     target_compile_features(${target_name} PRIVATE ${standard})
 
+    #[===[
     if (WIN32 AND DESKTOP_APP_SPECIAL_TARGET)
         set_property(TARGET ${target_name} APPEND_STRING PROPERTY STATIC_LIBRARY_OPTIONS "$<IF:$<CONFIG:Debug>,,/LTCG>")
     endif()
+    ]==]#
 
     target_link_libraries(${target_name} PRIVATE desktop-app::common_options)
     set_target_properties(${target_name} PROPERTIES

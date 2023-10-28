@@ -56,6 +56,7 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
         )
     endif()
 
+    #[===[
     if (DESKTOP_APP_SPECIAL_TARGET)
         target_compile_options(common_options
         INTERFACE
@@ -67,6 +68,8 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
             $<IF:$<CONFIG:Debug>,,/LTCGOUT:>
         )
     endif()
+    ]==]#
+
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
     target_compile_definitions(common_options
     INTERFACE
