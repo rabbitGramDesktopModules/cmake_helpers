@@ -68,7 +68,7 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
             $<IF:$<CONFIG:Debug>,,/LTCGOUT:>
         )
     endif()
-    ]==]#
+    ]===]#
 
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
     target_compile_definitions(common_options
